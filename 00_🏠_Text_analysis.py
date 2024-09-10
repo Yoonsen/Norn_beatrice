@@ -21,12 +21,13 @@ st.session_state.update(st.session_state)
 @st.cache_data()
 def corpus():
     c = pd.read_excel("Beatrice_korpus.xlsx", index_col=0)
-    st.session_state['korpus'] = c
-    st.session_state['dhlabid'] = [int(x) for x in c.dhlabid]
     c['url'] = c.urn.apply(lambda x: f"https://nb.no/items/{x}")
     return c
 
 litt_korpus = corpus()
+st.session_state['korpus'] = litt_korpus
+st.session_state['dhlabid'] = [int(x) for x in litt_korpus.dhlabid]
+
 st.dataframe(
     litt_korpus[['url','title', 'authors','year']],
     column_config={
