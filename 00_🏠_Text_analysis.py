@@ -13,7 +13,7 @@ st.session_state.update(st.session_state)
 #st.session_state.update(st.session_state)
 
 
-# zotero_excel = "Zoterobibliotek eksportert_010420.xlsx"
+
 
 #### CODE FOR WELCOME SCREEN
 
@@ -28,6 +28,9 @@ litt_korpus = corpus()
 st.session_state['korpus'] = litt_korpus
 st.session_state['dhlabid'] = [int(x) for x in litt_korpus.dhlabid]
 
+st.title("Oversikt over korpuset - klikk på lenkene for å gå til bokhylla")
+st.write("Velg en oppgave fra sidemenyen, finn konkordanser eller bygg en kollokasjon")
+st.write("Sjekk ut https://dh.nb.no mer om DH-lab og tekstanalyse")
 st.dataframe(
     litt_korpus[['url','title', 'authors','year']],
     column_config={
