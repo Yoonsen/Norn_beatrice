@@ -63,6 +63,6 @@ if konk_ord != '':
     st.dataframe(concs[['url','Konkordans']],
         column_config={
             "url": st.column_config.LinkColumn("URL"),
-            "conc": st.column_config.TextColumn(label = konk_ord),
+            "Konkordans": st.column_config.TextColumn()
         },
         hide_index=True)
