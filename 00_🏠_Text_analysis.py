@@ -31,6 +31,7 @@ st.session_state['dhlabid'] = [int(x) for x in litt_korpus.dhlabid]
 st.title("Oversikt over korpuset - klikk på lenkene for å gå til bokhylla")
 st.write("Velg en oppgave fra sidemenyen, finn konkordanser eller bygg en kollokasjon")
 st.write("Sjekk ut https://dh.nb.no mer om DH-lab og tekstanalyse")
+
 st.dataframe(
     litt_korpus[['url','title', 'authors','year']],
     column_config={
